@@ -23,6 +23,12 @@ class PortfolioHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
+        super().end_headers()
+
     def guess_type(self, path):
         if path.endswith(".woff2"):
             return "font/woff2"
@@ -39,6 +45,11 @@ class PortfolioHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         return super().guess_type(path)
 
     def do_GET(self):
+        # Strip caching request headers so browser always gets 200 OK fresh data
+        for h in ["If-Modified-Since", "if-modified-since", "If-None-Match", "if-none-match"]:
+            if h in self.headers:
+                del self.headers[h]
+
         # Resolve clean paths like /projects/lific to /projects/lific/index.html
         url_path = self.path.split("?")[0].split("#")[0].strip("/")
         candidate = os.path.join(DIRECTORY, url_path)
