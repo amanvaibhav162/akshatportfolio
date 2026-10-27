@@ -1,2 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Blake Werlinger</title><description>Projects and writing.</description><link>https://werlinger.dev/</link><item><title>The retail sales floor has room for AI (The Imagine App)</title><link>https://werlinger.dev/writing/the-retail-sales-floor-has-room-for-ai-the-imagine-app/</link><guid isPermaLink="true">https://werlinger.dev/writing/the-retail-sales-floor-has-room-for-ai-the-imagine-app/</guid><description>Outlining my project &quot;The Imagine App&quot; and how I&apos;ve refined it for use on a real retail sales floor.</description><pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate></item><item><title>AutoGPT &amp; Me</title><link>https://werlinger.dev/writing/my-time-with-autogpt/</link><guid isPermaLink="true">https://werlinger.dev/writing/my-time-with-autogpt/</guid><description>Explaining my history with the AutoGPT project.</description><pubDate>Tue, 28 Jul 2026 00:00:00 GMT</pubDate></item><item><title>Omnith: a C# simulation engine running 10,000+ autonomous agents at 60FPS, moddable by design</title><link>https://werlinger.dev/writing/what-is-omnith/</link><guid isPermaLink="true">https://werlinger.dev/writing/what-is-omnith/</guid><description>Going over my biggest C# project. Simulation Engine for a God Game I hope to release on Steam.</description><pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate></item><item><title>Lific was made out of spite</title><link>https://werlinger.dev/writing/lific-was-made-out-of-spite/</link><guid isPermaLink="true">https://werlinger.dev/writing/lific-was-made-out-of-spite/</guid><description>The story of how Lific came to be.</description><pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate></item><item><title>[Project] ImagineApp</title><link>https://werlinger.dev/projects/imagineapp/</link><guid isPermaLink="true">https://werlinger.dev/projects/imagineapp/</guid><description>An AI shopping assistant I built to help me in my retail job at Best Buy.</description><pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate></item><item><title>Blake Werlinger: Origins (lmao)</title><link>https://werlinger.dev/writing/blake-werlinger-origins-lmao/</link><guid isPermaLink="true">https://werlinger.dev/writing/blake-werlinger-origins-lmao/</guid><description>First portfolio writing. Outlines my entire history because why not.</description><pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate></item><item><title>[Project] Lific</title><link>https://werlinger.dev/projects/lific/</link><guid isPermaLink="true">https://werlinger.dev/projects/lific/</guid><description>An issue tracker built for agents to work on large projects via a single binary &amp; SQLite database. Includes a full web UI and optimized MCP.</description><pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate></item><item><title>[Project] Omnith</title><link>https://werlinger.dev/projects/omnith/</link><guid isPermaLink="true">https://werlinger.dev/projects/omnith/</guid><description>C# 2D Simulation Engine &amp; God Game. Custom ECS and data driven architecture.</description><pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate></item><item><title>[Project] Rebang</title><link>https://werlinger.dev/projects/rebang/</link><guid isPermaLink="true">https://werlinger.dev/projects/rebang/</guid><description>Search redirector using DuckDuckGo-style bangs. Compressed a 13,000 bang database by 43% and built a custom bang editor.</description><pubDate>Fri, 14 Feb 2025 00:00:00 GMT</pubDate></item><item><title>[Project] ColonyCopilot</title><link>https://werlinger.dev/projects/colonycopilot/</link><guid isPermaLink="true">https://werlinger.dev/projects/colonycopilot/</guid><description>An April 2024 experiment in connecting agentic AI to an existing video game surface.</description><pubDate>Tue, 30 Apr 2024 00:00:00 GMT</pubDate></item><item><title>[Project] AutoGPT</title><link>https://werlinger.dev/projects/autogpt/</link><guid isPermaLink="true">https://werlinger.dev/projects/autogpt/</guid><description>186k star repo. Early contributor in spring 2023. Built a recursive summarization system for context compression and added Selenium-based web search. Created a video that was featured in the official README.md
-I was at the genuine frontier of agentic AI before the term was coined.</description><pubDate>Sat, 01 Apr 2023 00:00:00 GMT</pubDate></item><item><title>[Project] Unity Mods (Bloons Tower Defense)</title><link>https://werlinger.dev/projects/banana-farmer-tower/</link><guid isPermaLink="true">https://werlinger.dev/projects/banana-farmer-tower/</guid><description>Used MelonLoader to make video game mods for Unity Engine games (primarily Bloons Tower Defense 6)</description><pubDate>Sat, 29 Oct 2022 00:00:00 GMT</pubDate></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Akshat Bharat Yadav · Game Developer</title>
+    <description>Unity &amp; C# Gameplay Programmer portfolio and project updates.</description>
+    <link>https://akshatyadav.dev/</link>
+    <item>
+      <title>Golf but BlackHole? (In Development)</title>
+      <link>https://akshatyadav.dev/projects/golf-but-blackhole</link>
+      <guid isPermaLink="true">https://akshatyadav.dev/projects/golf-but-blackhole</guid>
+      <description>Speedrunning puzzle game utilizing custom gravitational field physics simulations and miniature black holes.</description>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>XP Fender</title>
+      <link>https://akshatyadav.dev/projects/xp-fender</link>
+      <guid isPermaLink="true">https://akshatyadav.dev/projects/xp-fender</guid>
+      <description>Play-in-browser reflex runner &amp; gauntlet platformer with sub-frame physics and zero-allocation object pooling.</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>O.BO.RUST</title>
+      <link>https://akshatyadav.dev/projects/oborust</link>
+      <guid isPermaLink="true">https://akshatyadav.dev/projects/oborust</guid>
+      <description>Atmospheric top-down tactical survival title featuring 2D raycast dynamic FOV lighting and soft shadows.</description>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CUBESCAPE</title>
+      <link>https://akshatyadav.dev/projects/cubescape</link>
+      <guid isPermaLink="true">https://akshatyadav.dev/projects/cubescape</guid>
+      <description>Isometric grid physics puzzler with spatial manipulation mechanics.</description>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

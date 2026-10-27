@@ -1,6 +1,11 @@
 <!DOCTYPE html><html lang="en" class="no-js"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="generator" content="Astro v6.1.9"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="canonical" href="https://akshatyadav.dev/"><link rel="alternate" type="application/rss+xml" title="Akshat Yadav" href="/rss.xml"><title>Akshat Bharat Yadav · Unity & C# Game Developer</title><meta name="description" content="Portfolio of Akshat Bharat Yadav — Unity & C# Game Developer, Army Institute of Technology (AIT) Pune. Creator of XP Fender, O.BO.RUST, and CUBESCAPE."><meta property="og:type" content="website"><meta property="og:title" content="Akshat Yadav · Unity Game Developer"><meta property="og:description" content="Portfolio of Akshat Yadav — Unity Game Developer specializing in C#, gameplay systems, physics simulation, and shaders."><meta property="og:url" content="https://akshatyadav.dev/"><meta property="og:site_name" content="Akshat Yadav"><meta property="og:image" content="https://akshatyadav.dev/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://akshatyadav.dev/og.png"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#0a0a0a"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a"><link rel="stylesheet" href="/_astro/Footer.CHQbvRLa.css">
 <link rel="stylesheet" href="/_astro/index@_@astro.CFlg536b.css">
 <link rel="stylesheet" href="/assets/particles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/connect.css">
+<link rel="stylesheet" href="/assets/tech-stack.css">
 <style>
   :root, html, body {
     color-scheme: dark !important;
@@ -69,16 +74,22 @@
     }
   }
 
-  /* 2-Column Showcase Grid */
+  /* Showcase Grid */
   @media (min-width: 640px) {
     .plate-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       gap: 2.25rem 2rem !important;
     }
   }
+  @media (min-width: 1024px) {
+    .plate-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 2.25rem 2rem !important;
+    }
+  }
   @media (min-width: 1280px) {
     .plate-grid {
-      gap: 2.75rem 2.5rem !important;
+      gap: 2.75rem 2.25rem !important;
     }
   }
   .plate-link {
@@ -87,16 +98,428 @@
   .plate-link:hover {
     transform: translateY(-2px);
   }
+
+  /* Full-Width "Coming Soon" Plate (Pic on Left, Details on Right) */
+  .plate-coming-soon {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+  .plate-coming-soon .plate-link {
+    border-style: dashed !important;
+    border-color: color-mix(in oklch, var(--color-accent-strong) 50%, var(--color-border-strong)) !important;
+    background: linear-gradient(180deg, color-mix(in oklch, var(--color-accent) 6%, transparent) 0%, color-mix(in oklch, var(--color-bg) 95%, transparent) 100%) !important;
+  }
+  .plate-coming-soon .plate-link:hover {
+    border-color: var(--color-accent-strong) !important;
+    box-shadow: 0 8px 30px -6px color-mix(in oklch, var(--color-accent-strong) 30%, transparent) !important;
+  }
+  .plate-coming-soon .plate-brk i {
+    opacity: 0.75 !important;
+  }
+  .plate-coming-soon .plate-link:hover .plate-brk i {
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 6px var(--color-accent-strong));
+  }
+
+  @media (min-width: 640px) {
+    .plate-coming-soon .plate-link {
+      display: grid !important;
+      grid-template-columns: 1.2fr 1fr !important;
+      min-height: 380px !important;
+      align-items: stretch !important;
+    }
+    .plate-coming-soon .plate-media {
+      aspect-ratio: auto !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      border-bottom: none !important;
+      border-right: 1px solid var(--color-border) !important;
+      position: relative !important;
+    }
+    .plate-coming-soon .plate-media img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+    .plate-coming-soon .plate-block {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      height: 100% !important;
+    }
+    .plate-coming-soon .pb-title {
+      font-size: 1.35rem !important;
+      font-weight: 600 !important;
+    }
+    .plate-coming-soon .pb-summary {
+      flex: 1 1 auto !important;
+      padding: 1.1rem 1.25rem !important;
+      font-size: 0.92rem !important;
+      line-height: 1.6 !important;
+    }
+    .plate-coming-soon .pb-summary-text {
+      -webkit-line-clamp: 4 !important;
+      line-clamp: 4 !important;
+    }
+    .plate-coming-soon .pb-problem {
+      padding: 1rem 1.25rem 1.1rem !important;
+      font-size: 0.85rem !important;
+      line-height: 1.6 !important;
+    }
+    .plate-coming-soon .pb-row .pb-cell {
+      padding: 0.85rem 1.25rem !important;
+    }
+  }
+
+  /* Floating WIP Badge on thumbnail */
+  .cs-badge-overlay {
+    position: absolute;
+    top: 0.65rem;
+    left: 0.65rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.25rem 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-accent-strong);
+    background: color-mix(in oklch, var(--color-bg) 85%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid color-mix(in oklch, var(--color-accent-strong) 50%, transparent);
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
+  .cs-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-accent-strong);
+    box-shadow: 0 0 8px var(--color-accent-strong);
+    animation: csPulseAnim 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes csPulseAnim {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+  }
+
+  /* Technical watermark on preview */
+  .cs-watermark {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.65rem;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-fg-subtle);
+    background: color-mix(in oklch, var(--color-bg) 80%, transparent);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border);
+    pointer-events: none;
+  }
+
+  /* Subtitle chip in pb-title */
+  .cs-title-pill {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.45rem;
+    padding: 1px 6px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-strong);
+    border: 1px solid color-mix(in oklch, var(--color-accent) 40%, transparent);
+    background: color-mix(in oklch, var(--color-accent) 12%, transparent);
+    border-radius: 3px;
+  }
+
+  /* Status footer pill with beacon */
+  .pb-status-wip {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-accent-strong) !important;
+    font-weight: 500;
+  }
+  .pb-status-wip::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 6px currentColor;
+    animation: csPulseAnim 1.8s infinite;
+  }
 </style>
 <script type="module" src="/assets/particles.js"></script>
 </head> <body class="min-h-svh flex flex-col"> 
 <div id="particles-bg" class="particles-bg" aria-hidden="true"><canvas id="particles-canvas" class="particles-canvas"></canvas></div>
 <script>
       document.documentElement.classList.remove("no-js");
-    </script> <header class="relative z-10"> <div class="w-full flex h-16 items-center justify-between px-6 lg:px-10"> <a href="/" class="group flex items-baseline gap-0.5 py-4 pr-3 -mr-3 font-mono text-sm tracking-tight text-fg" aria-label="Home"> <span class="lowercase">akypk</span> <span class="cursor-blink text-accent-strong" aria-hidden="true">_</span> </a> <nav> <ul class="flex items-center gap-5 sm:gap-7 font-mono text-xs lowercase"> <li> <a href="/#work" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Projects </a> </li><li> <a href="/writing" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Writing </a> </li><li> <a href="https://akypk.itch.io" target="_blank" rel="noopener noreferrer" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-accent-strong hover:text-fg"> itch.io ↗ </a> </li><li> <a href="/Akshat_Yadav_Resume.pdf" target="_blank" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Resume ↗ </a> </li> </ul> </nav> </div> </header> <main class="flex-1">   <canvas id="swarm" aria-hidden="true"></canvas> <div id="swarm-inspector" hidden aria-live="polite"></div> <div id="page" class="page-container px-6 lg:px-10">  <section class="pt-24 sm:pt-32"> <div class="hero-layout"> <div class="hero-main"> <h1 class="name" aria-label="Akshat Yadav."> <span aria-hidden="true"> <span class="glyph swarm-site" data-site="glyph-0" data-ground="bottom">A</span><span class="glyph swarm-site" data-site="glyph-1" data-ground="bottom">k</span><span class="glyph swarm-site" data-site="glyph-2" data-ground="bottom">s</span><span class="glyph swarm-site" data-site="glyph-3" data-ground="bottom">h</span><span class="glyph swarm-site" data-site="glyph-4" data-ground="bottom">a</span><span class="glyph swarm-site" data-site="glyph-5" data-ground="bottom">t</span><span class="name-space"></span><span class="glyph swarm-site" data-site="glyph-6" data-ground="bottom">Y</span><span class="glyph swarm-site" data-site="glyph-7" data-ground="bottom">a</span><span class="glyph swarm-site" data-site="glyph-8" data-ground="bottom">d</span><span class="glyph swarm-site" data-site="glyph-9" data-ground="bottom">a</span><span class="glyph swarm-site" data-site="glyph-10" data-ground="bottom">v</span><span class="glyph swarm-site text-accent-strong" data-site="glyph-11" data-ground="bottom">.</span> </span> </h1>  <ul class="catalogue mt-5"> <li>unity (2d/3d)</li> <li>c# gameplay programming</li> <li>custom physics & bullet hell</li> <li class="cat-lang">c++ / java / python</li> <li>ait ar/vr club</li> <li>itch.io creator</li> </ul> </div> <div class="hero-aside mt-10 lg:mt-0"> <div class="meme"> <span class="meme-figure" aria-hidden="true"></span> <div class="meme-dialogue text-[0.95rem] text-fg-muted"> <p class="meme-bubble meme-say">Debug.Log("Game Running: 60 FPS");</p> <p class="meme-reply font-mono">
-&gt; BUILD SUCCESSFUL · AIT PUNE
-<span class="meme-ok">3 ITCH.IO TITLES LIVE</span> </p> <p class="meme-bubble meme-say meme-omg">0 errors, 0 warnings. Ready to ship.</p> </div> </div> </div> </div> </section>  <section id="work" class="scroll-mt-8"> <div class="flex items-baseline justify-between border-t border-border-strong pt-3"> <h2 class="font-mono text-xs text-fg">
-index of work <span class="text-fg-subtle">· 04</span> </h2> </div> <ol class="plate-grid"> 
+    </script> <header class="relative z-10"> <div class="w-full flex h-16 items-center justify-between px-6 lg:px-10"> <a href="/" class="group flex items-baseline gap-0.5 py-4 pr-3 -mr-3 font-mono text-sm tracking-tight text-fg" aria-label="Home"> <span class="lowercase">akypk</span> <span class="cursor-blink text-accent-strong" aria-hidden="true">_</span> </a> <nav> <ul class="flex items-center gap-5 sm:gap-7 font-mono text-xs lowercase"> <li> <a href="/#stack" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Stack </a> </li><li> <a href="/#work" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Projects </a> </li><li> <a href="#connect" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Connect </a> </li><li> <a href="https://akypk.itch.io" target="_blank" rel="noopener noreferrer" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-accent-strong hover:text-fg"> itch.io ↗ </a> </li><li> <a href="/Akshat_Yadav_Resume.pdf" target="_blank" class="relative py-1.5 transition-colors before:absolute before:-inset-x-2.5 before:-inset-y-3.5 before:content-[''] text-fg-muted hover:text-fg"> Resume ↗ </a> </li> </ul> </nav> </div> </header> <main class="flex-1">   <canvas id="swarm" aria-hidden="true"></canvas> <div id="swarm-inspector" hidden aria-live="polite"></div> <div id="page" class="page-container px-6 lg:px-10">  <section class="pt-24 sm:pt-32"> <div class="hero-layout"> <div class="hero-main"> <h1 class="name" aria-label="Akshat Yadav."> <span aria-hidden="true"> <span class="glyph swarm-site" data-site="glyph-0" data-ground="bottom">A</span><span class="glyph swarm-site" data-site="glyph-1" data-ground="bottom">k</span><span class="glyph swarm-site" data-site="glyph-2" data-ground="bottom">s</span><span class="glyph swarm-site" data-site="glyph-3" data-ground="bottom">h</span><span class="glyph swarm-site" data-site="glyph-4" data-ground="bottom">a</span><span class="glyph swarm-site" data-site="glyph-5" data-ground="bottom">t</span><span class="name-space"></span><span class="glyph swarm-site" data-site="glyph-6" data-ground="bottom">Y</span><span class="glyph swarm-site" data-site="glyph-7" data-ground="bottom">a</span><span class="glyph swarm-site" data-site="glyph-8" data-ground="bottom">d</span><span class="glyph swarm-site" data-site="glyph-9" data-ground="bottom">a</span><span class="glyph swarm-site" data-site="glyph-10" data-ground="bottom">v</span><span class="glyph swarm-site text-accent-strong" data-site="glyph-11" data-ground="bottom">.</span> </span> </h1>  <ul class="catalogue mt-5"> <li>unity (2d/3d)</li> <li>c# gameplay programming</li> <li>custom physics & bullet hell</li> <li class="cat-lang">c++ / java / python</li> <li>ait ar/vr club</li> <li>itch.io creator</li> </ul> </div> <div class="hero-aside mt-10 lg:mt-0"> <div class="meme"> <span class="meme-figure" aria-hidden="true"></span> <div class="meme-dialogue text-[0.95rem] text-fg-muted"> <p class="meme-bubble meme-say">Debug.Log("Game Running: 60 FPS");</p> <p class="meme-reply font-mono">
+> BUILD SUCCESSFUL · AIT PUNE
+<span class="meme-ok">3 ITCH.IO TITLES LIVE</span> </p> <p class="meme-bubble meme-say meme-omg">0 errors, 0 warnings. Ready to ship.</p> </div> </div> </div> </div> </section>
+
+<!-- ========================================================================
+     TECH STACK SECTION (Minimal, High-Signal React Bits Spotlight Cards with Logos)
+     ======================================================================== -->
+<section id="stack" class="tech-stack-section scroll-mt-12">
+  <div class="tech-header-row">
+    <h2 class="font-mono text-xs text-fg flex items-center gap-2">
+      <span>tech stack</span>
+      <span class="text-fg-subtle">· 02</span>
+    </h2>
+    <span class="font-mono text-[11px] text-fg-subtle hidden sm:inline-block">what i use to build games</span>
+  </div>
+
+  <div class="tech-grid-compact">
+    <!-- Card 1: Engines & Runtime -->
+    <div class="spotlight-card">
+      <div class="tech-card-head">
+        <div class="tech-card-title-group">
+          <span class="tech-card-icon" aria-hidden="true">🕹️</span>
+          <span class="tech-card-label">Engines &amp; Runtime</span>
+        </div>
+        <span class="tech-card-count">01</span>
+      </div>
+
+      <div class="tech-item-list">
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg role="img" viewBox="0 0 24 24"><path d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg>
+              </span>
+              <span class="tech-item-name">Unity</span>
+            </div>
+            <span class="tech-item-badge">Primary</span>
+          </div>
+          <span class="tech-item-sub">2D / 3D · URP · WebGL builds</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg role="img" viewBox="0 0 24 24"><path d="M9.5598.683c-1.096.244-2.1812.5831-3.1983 1.0951.023.8981.081 1.7582.199 2.6323-.395.253-.81.47-1.178.766-.375.288-.7581.564-1.0971.9011-.6781-.448-1.3962-.869-2.1352-1.2411C1.3532 5.6934.608 6.6186 0 7.6546c.458.7411.936 1.4352 1.4521 2.0942h.014v6.3565c.012 0 .023 0 .035.003l3.8963.376c.204.02.364.184.378.3891l.12 1.7201 3.3994.242.234-1.587c.03-.206.207-.358.415-.358h4.1114c.208 0 .385.152.415.358l.234 1.587 3.3993-.242.12-1.72a.4196.4196 0 01.378-.3891l3.8954-.376c.012 0 .023-.003.035-.003v-.5071h.002V9.7498h.014c.516-.659.994-1.3531 1.4521-2.0942-.608-1.036-1.3541-1.9611-2.1512-2.8192-.739.372-1.4571.793-2.1352 1.2411-.339-.337-.721-.613-1.096-.901-.369-.296-.7841-.5131-1.1781-.7661.117-.8741.175-1.7342.199-2.6323-1.0171-.512-2.1012-.851-3.1983-1.095-.438.736-.838 1.533-1.1871 2.3121-.414-.069-.829-.094-1.2461-.099h-.016c-.417.005-.832.03-1.2461.099-.349-.779-.749-1.576-1.1881-2.3121l.001-.001zM6.4765 9.9889c1.2971 0 2.3492 1.0511 2.3492 2.3482s-1.052 2.3482-2.3492 2.3482c-1.296 0-2.3482-1.051-2.3482-2.3482 0-1.297 1.0511-2.3482 2.3482-2.3482zm11.049 0c1.296 0 2.3482 1.0511 2.3482 2.3482s-1.0511 2.3482-2.3482 2.3482-2.3492-1.051-2.3492-2.3482c0-1.297 1.051-2.3482 2.3492-2.3482zm-10.824.9301c-.861 0-1.559.698-1.559 1.5591s.698 1.5582 1.559 1.5582c.8611 0 1.5592-.698 1.5592-1.5582 0-.86-.697-1.559-1.5591-1.559zm10.598 0c-.8611 0-1.5582.698-1.5582 1.5591s.697 1.5582 1.5581 1.5582c.8611 0 1.5592-.698 1.5592-1.5582 0-.86-.697-1.559-1.5592-1.559zm-5.2985.453c.417 0 .757.308.757.6871v2.1622c0 .379-.339.687-.757.687s-.756-.308-.756-.687V12.059c0-.379.339-.687.756-.687zM1.4601 16.9464c.002.377.006.789.006.871 0 3.7014 4.6944 5.4795 10.5269 5.5005h.014c5.8325-.02 10.5259-1.7991 10.5259-5.5004 0-.084.005-.495.007-.871l-3.5023.338-.121 1.729a.421.421 0 01-.389.3901l-4.1814.296a.4203.4203 0 01-.415-.358l-.238-1.6141h-3.3863l-.238 1.6141a.4192.4192 0 01-.4451.357l-4.1513-.296c-.208-.015-.375-.181-.389-.389l-.12-1.7292-3.5044-.337z"/></svg>
+              </span>
+              <span class="tech-item-name">Godot 4</span>
+            </div>
+            <span class="tech-item-badge">Secondary</span>
+          </div>
+          <span class="tech-item-sub">2D prototyping · custom mechanics</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg role="img" viewBox="0 0 24 24"><path d="M3.489 10.164c-.565.548-.885 1.172-.885 1.835 0 2.167 3.415 3.921 7.631 3.921 2.339 0 4.437-.484 5.837-1.335-1.533 1.426-4.265 2.43-7.385 2.43C3.89 17.015 0 14.769 0 11.999s3.89-5.014 8.689-5.014c3.131.002 5.872 1.009 7.398 2.444-1.399-.856-3.504-1.351-5.852-1.351-2.506 0-4.73.621-6.121 1.579l.785 3.395.971-3.481h.737l.971 3.481.805-3.481h.805L7.953 14.11h-.717l-.991-3.566L5.24 14.11h-.714zm19.839 3.48h-.162v.424h-.142v-.424h-.164v-.122h.468zm.064-.122h.209l.095.364.096-.364H24v.546h-.133v-.415h-.002l-.113.415h-.109l-.115-.415h-.003v.415h-.133zm-5.699.515c-.2.084-.399.126-.601.126-.319 0-.608-.055-.863-.166q-.3825-.1665-.645-.459c-.175-.195-.311-.424-.404-.688-.093-.263-.14-.547-.14-.851 0-.313.047-.601.14-.869.093-.269.226-.502.402-.699.175-.2.39-.355.645-.468s.541-.171.863-.171c.215 0 .421.034.621.098.199.064.381.16.543.284s.295.279.399.463.169.395.193.632h-.874c-.055-.233-.159-.408-.315-.525-.155-.118-.343-.176-.567-.176-.207 0-.382.04-.526.12s-.262.187-.35.322a1.41 1.41 0 0 0-.196.459c-.039.171-.062.348-.062.532 0 .175.02.346.062.512.04.167.107.315.196.448.088.133.206.24.35.32s.319.119.526.119c.303 0 .539-.077.705-.23s.262-.375.29-.668h-.922v-.689h1.75v2.255h-.584l-.093-.472c-.162.21-.344.357-.543.441m2.708-4.14v3.395h2.033v.774h-2.949V9.897zm-9.204 1.585c.109.151.191.337.251.557.053.21.08.452.08.716v.047H9.372c.011.41.164.876.807.876.45 0 .703-.344.719-.537l.002-.042h.592l-.007.051c-.008.075-.051.222-.135.377-.049.086-.104.166-.166.239a1.3 1.3 0 0 1-.248.218c-.071.046-.158.1-.287.139-.148.047-.326.069-.543.069-.415 0-.763-.151-1.007-.434a1.43 1.43 0 0 1-.266-.482c-.06-.182-.091-.386-.091-.601 0-.485.12-.896.348-1.186.125-.158.278-.28.457-.362.191-.086.41-.131.654-.131.218 0 .413.043.581.127.165.082.304.202.415.359m-1.064.047c-.402 0-.741.357-.765.785h1.543c-.046-.528-.302-.785-.778-.785m4.373.388c.058.182.086.381.084.588 0 .19-.022.385-.064.563-.049.206-.122.39-.22.545-.11.178-.252.318-.419.415-.186.109-.408.164-.654.164-.228 0-.426-.057-.585-.173a.89.89 0 0 1-.198-.193v.282h-.561V9.983h.59v1.393c.093-.111.202-.2.324-.262.146-.078.313-.118.497-.12.199 0 .383.04.547.118.158.075.295.184.408.324.109.135.193.297.251.481m-.53.67c0-.2-.013-.459-.111-.672-.12-.26-.335-.384-.654-.384-.3 0-.506.135-.628.417-.084.195-.126.452-.126.785 0 .696.412.942.765.942.244 0 .435-.102.565-.303.125-.191.189-.462.189-.785"/></svg>
+              </span>
+              <span class="tech-item-name">WebGL / HTML5</span>
+            </div>
+            <span class="tech-item-badge">Browser</span>
+          </div>
+          <span class="tech-item-sub">Instant in-browser play &amp; itch.io</span>
+        </div>
+      </div>
+
+      <span class="plate-brk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </div>
+
+    <!-- Card 2: Languages -->
+    <div class="spotlight-card">
+      <div class="tech-card-head">
+        <div class="tech-card-title-group">
+          <span class="tech-card-icon" aria-hidden="true">⚡</span>
+          <span class="tech-card-label">Languages</span>
+        </div>
+        <span class="tech-card-count">02</span>
+      </div>
+
+      <div class="tech-item-list">
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg viewBox="0 0 128 128"><path d="M117.5 33.5l.3-.2c-.6-1.1-1.5-2.1-2.4-2.6L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.3.9 3.4l-.2.1c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c.1-.8 0-1.7-.4-2.6zm-53.5 70c-21.8 0-39.5-17.7-39.5-39.5S42.2 24.5 64 24.5c14.7 0 27.5 8.1 34.3 20l-13 7.5C81.1 44.5 73.1 39.5 64 39.5c-13.5 0-24.5 11-24.5 24.5s11 24.5 24.5 24.5c9.1 0 17.1-5 21.3-12.4l12.9 7.6c-6.8 11.8-19.6 19.8-34.2 19.8zM115 62h-3.2l-.9 4h4.1v5h-5l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6H94v-5h3.5l.9-4H94v-5h5.3l1.2-6h4.9l-1.2 6h3.8l1.2-6h4.8l-1.2 6h2.2v5zm-12.7 4h3.8l.9-4h-3.8z"/></svg>
+              </span>
+              <span class="tech-item-name">C#</span>
+            </div>
+            <span class="tech-item-badge">Daily</span>
+          </div>
+          <span class="tech-item-sub">.NET 8 · Burst · zero-alloc loops</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg role="img" viewBox="0 0 24 24"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg>
+              </span>
+              <span class="tech-item-name">C++</span>
+            </div>
+            <span class="tech-item-badge">Core</span>
+          </div>
+          <span class="tech-item-sub">Low-level systems &amp; performance math</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg role="img" viewBox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+              </span>
+              <span class="tech-item-name">Python</span>
+            </div>
+            <span class="tech-item-badge">Tooling</span>
+          </div>
+          <span class="tech-item-sub">Automation, build pipelines &amp; scripts</span>
+        </div>
+      </div>
+
+      <span class="plate-brk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </div>
+
+    <!-- Card 3: Gameplay Systems & Tech -->
+    <div class="spotlight-card">
+      <div class="tech-card-head">
+        <div class="tech-card-title-group">
+          <span class="tech-card-icon" aria-hidden="true">🛠️</span>
+          <span class="tech-card-label">Specialized Systems</span>
+        </div>
+        <span class="tech-card-count">03</span>
+      </div>
+
+      <div class="tech-item-list">
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)"/>
+                </svg>
+              </span>
+              <span class="tech-item-name">Custom Physics</span>
+            </div>
+            <span class="tech-item-badge">Simulation</span>
+          </div>
+          <span class="tech-item-sub">Orbital gravity fields &amp; sub-frame loops</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 2-1.9 6a2 2 0 0 1-1.3 1.3L3 11.2l5.8 1.9a2 2 0 0 1 1.3 1.3l1.9 6 1.9-6a2 2 0 0 1 1.3-1.3l5.8-1.9-5.8-1.9a2 2 0 0 1-1.3-1.3z"/>
+                </svg>
+              </span>
+              <span class="tech-item-name">HLSL / Shaders</span>
+            </div>
+            <span class="tech-item-badge">Graphics</span>
+          </div>
+          <span class="tech-item-sub">2D raycast dynamic FOV &amp; soft shadows</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="3"/>
+                  <path d="m8 10 3 2.5L8 15"/>
+                  <line x1="13" y1="15" x2="16" y2="15"/>
+                </svg>
+              </span>
+              <span class="tech-item-name">IL2CPP Modding</span>
+            </div>
+            <span class="tech-item-badge">Reversing</span>
+          </div>
+          <span class="tech-item-sub">MelonLoader &amp; Harmony hooks</span>
+        </div>
+
+        <div class="tech-card-item">
+          <div class="tech-item-main">
+            <div class="tech-item-identity">
+              <span class="tech-logo-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5"/>
+                  <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                  <path d="M16 21h5v-5"/>
+                </svg>
+              </span>
+              <span class="tech-item-name">Zero-GC Pooling</span>
+            </div>
+            <span class="tech-item-badge">Performance</span>
+          </div>
+          <span class="tech-item-sub">Circular buffer projectile recycling</span>
+        </div>
+      </div>
+
+      <span class="plate-brk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="scroll-mt-8"> <div class="flex items-baseline justify-between border-t border-border-strong pt-3"> <h2 class="font-mono text-xs text-fg">
+index of work <span class="text-fg-subtle">· 03</span> </h2> <span class="font-mono text-[11px] text-fg-subtle hidden sm:inline-block">3 shipped · <span class="text-accent-strong">1 in development</span></span> </div> <ol class="plate-grid"> 
+<li class="plate plate-coming-soon"> 
+  <a href="/projects/golf-but-blackhole" class="plate-link"> 
+    <span class="plate-media" aria-hidden="true"> 
+      <div class="cs-badge-overlay">
+        <span class="cs-pulse-dot" aria-hidden="true"></span>
+        <span>Coming Soon</span>
+      </div>
+      <img src="/assets/golf-but-blackhole.png" alt="Golf but BlackHole?" style="object-position: center;" loading="eager"> 
+      <span class="cs-watermark">WIP // PROTOTYPE</span>
+    </span> 
+    <span class="plate-block"> 
+      <span class="pb-row"> 
+        <span class="pb-cell pb-title">
+          Golf but BlackHole?
+          <span class="cs-title-pill">In Dev</span>
+        </span> 
+        <span class="pb-cell pb-year">2026</span> 
+      </span> 
+      <span class="pb-summary"> 
+        <span class="pb-summary-text">Wanna play golf without a stick? Use gravity and miniature black holes to make your shots. Fast-paced speedrunning puzzle game where you bend spacetime to hit the hole.</span> 
+      </span> 
+      <span class="pb-problem"> 
+        <span class="pb-problem-label label-micro">mechanics</span> Custom gravitational field physics simulation, orbital slingshot mechanics, and creative speedrun puzzle routing for straightforward-looking levels. 
+      </span> 
+      <span class="pb-row pb-foot"> 
+        <span class="pb-cell pb-stack"> unity · c# · gravity physics · puzzle · speedrun · itch.io </span> 
+        <span class="pb-cell pb-status pb-status-wip"> coming soon </span> 
+      </span> 
+    </span> 
+    <span class="plate-brk" aria-hidden="true"> <i></i><i></i><i></i><i></i> </span> 
+  </a> 
+</li>
 <li class="plate"> 
   <a href="/projects/xp-fender" class="plate-link"> 
     <span class="plate-media" aria-hidden="true"> 
@@ -116,30 +539,6 @@ index of work <span class="text-fg-subtle">· 04</span> </h2> </div> <ol class="
       <span class="pb-row pb-foot"> 
         <span class="pb-cell pb-stack"> unity · c# · bullet-hell · windows xp · itch.io </span> 
         <span class="pb-cell pb-status is-accent"> shipped </span> 
-      </span> 
-    </span> 
-    <span class="plate-brk" aria-hidden="true"> <i></i><i></i><i></i><i></i> </span> 
-  </a> 
-</li>
-<li class="plate"> 
-  <a href="/projects/omnith" class="plate-link"> 
-    <span class="plate-media" aria-hidden="true"> 
-      <img src="/projects/omnith_hero.webp" alt="Omnith" style="object-position: center;" loading="lazy"> 
-    </span> 
-    <span class="plate-block"> 
-      <span class="pb-row"> 
-        <span class="pb-cell pb-title">Omnith</span> 
-        <span class="pb-cell pb-year">2026</span> 
-      </span> 
-      <span class="pb-summary"> 
-        <span class="pb-summary-text">C# 2D Simulation Engine & God Game running 10,000+ autonomous agents at 60 FPS. Custom Archetype ECS and RimWorld-inspired data-driven spec architecture.</span> 
-      </span> 
-      <span class="pb-problem"> 
-        <span class="pb-problem-label label-micro">architecture</span> Custom archetype ECS bypassing Godot scene-tree, reflection-based modding pipeline, and Rust FFI acceleration for hot sorting loops. 
-      </span> 
-      <span class="pb-row pb-foot"> 
-        <span class="pb-cell pb-stack"> c# · godot 4 · archetype ecs · rust ffi · simulation </span> 
-        <span class="pb-cell pb-status is-accent"> active </span> 
       </span> 
     </span> 
     <span class="plate-brk" aria-hidden="true"> <i></i><i></i><i></i><i></i> </span> 
@@ -191,23 +590,75 @@ index of work <span class="text-fg-subtle">· 04</span> </h2> </div> <ol class="
     </span> 
     <span class="plate-brk" aria-hidden="true"> <i></i><i></i><i></i><i></i> </span> 
   </a> 
-</li> </ol> </section>  <section class="mt-20"> <div class="flex items-baseline justify-between border-t border-border-strong pt-3"> <h2 class="font-mono text-xs text-fg">writing</h2> <a href="/writing" class="font-mono text-xs text-fg-subtle hover:text-fg transition-colors p-2 -m-2">
-all posts →
-</a> </div> <ul class="mt-2"> <li class="reg-row"> <a href="/writing/high-performance-unity-csharp-burst" class="reg-link group"> <span class="reg-no font-mono">2026</span> <span class="reg-main"> <span class="reg-title">High-Performance Unity: Writing Allocation-Free C# and Leveraging the Burst Compiler</span> <span class="reg-summary">Practical techniques for eliminating GC allocs in hot gameplay loops, struct layout optimization, and SIMD execution.</span> </span> </a> </li><li class="reg-row"> <a href="/writing/demystifying-il2cpp-unity-modding" class="reg-link group"> <span class="reg-no font-mono">2026</span> <span class="reg-main"> <span class="reg-title">Demystifying IL2CPP &amp; Unity Modding: Reversing C# Binaries with MelonLoader</span> <span class="reg-summary">Exploring runtime assembly patching, Harmony method prefix/postfix hooks, and reverse engineering IL2CPP games.</span> </span> </a> </li><li class="reg-row"> <a href="/writing/what-is-omnith" class="reg-link group"> <span class="reg-no font-mono">2026</span> <span class="reg-main"> <span class="reg-title">Omnith: a C# simulation engine running 10,000+ autonomous agents at 60FPS, moddable by design</span> <span class="reg-summary">Going over my biggest C# project. Simulation Engine for a God Game I hope to release on Steam.</span> </span> </a> </li> </ul> </section>  <section class="mt-20 mb-4"> 
-<p class="border-t border-border-strong pt-4 text-[0.95rem] text-fg"> 
-Open for game dev roles & game jam collaborations. 
-<br class="sm:hidden" />
-<a href="mailto:akshatyadavlko@gmail.com" class="contact-link font-mono text-sm">akshatyadavlko@gmail.com</a> 
-<span class="text-fg-subtle mx-2">/</span> 
-<a href="https://akypk.itch.io" target="_blank" rel="noopener noreferrer" class="contact-link font-mono text-sm text-accent-strong">itch.io: akypk</a> 
-<span class="text-fg-subtle mx-2">/</span> 
-<a href="https://github.com/Akshat-Yadav09" target="_blank" rel="noopener noreferrer" class="contact-link font-mono text-sm">github</a> 
-<span class="text-fg-subtle mx-2">/</span> 
-<a href="https://www.linkedin.com/in/akshat-bharat-yadav-%F0%9F%94%9C-igdc-5280b2375/" target="_blank" rel="noopener noreferrer" class="contact-link font-mono text-sm">linkedin</a> 
-<span class="text-fg-subtle mx-2">/</span> 
-<a href="/Akshat_Yadav_Resume.pdf" target="_blank" class="contact-link font-mono text-sm">resume.pdf</a> 
-</p> 
-</section> </div> <script type="module" src="/_astro/index.astro_astro_type_script_index_0_lang.CQDsW1y8.js?v=v4_fast_few"></script>   </main> <footer class="mt-28"> <div class="page-container px-6 lg:px-10 pb-10"> <div class="flex flex-wrap items-baseline justify-between gap-4 border-t border-border-strong pt-6"> <p class="font-mono text-sm text-fg">
+</li> </ol> </section>  <section id="connect" class="connect-section scroll-mt-12">
+  <div class="connect-layout-split">
+    <!-- Left Column: Big Gamified Title & Info -->
+    <div class="connect-left-col">
+      <h2 class="connect-heading">
+        How can we<br class="hidden sm:inline" /> connect?
+      </h2>
+      <p class="connect-desc">
+        Looking for a gameplay programmer, planning a game jam, or building custom physics simulations? Drop a note or reach out directly.
+      </p>
+
+      <!-- Status badge -->
+      <div class="connect-status-badge">
+        <span class="connect-pulse-dot" aria-hidden="true"></span>
+        <span>Open for studio roles &amp; jam co-ops</span>
+      </div>
+
+      <!-- Direct channels on left side -->
+      <div class="connect-left-direct">
+        <div class="connect-direct-label">Direct email</div>
+        <a href="mailto:akshatyadavlko@gmail.com" class="connect-direct-mail">akshatyadavlko@gmail.com</a>
+
+        <div class="connect-direct-label mt-4">Channels</div>
+        <div class="connect-social-links">
+          <a href="https://akypk.itch.io" target="_blank" rel="noopener noreferrer" class="is-accent">itch.io: akypk ↗</a>
+          <a href="https://github.com/Akshat-Yadav09" target="_blank" rel="noopener noreferrer">github ↗</a>
+          <a href="https://www.linkedin.com/in/akshat-bharat-yadav-%F0%9F%94%9C-igdc-5280b2375/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
+          <a href="/Akshat_Yadav_Resume.pdf" target="_blank">resume.pdf ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Simple, Sleek Form Card -->
+    <div class="connect-right-col">
+      <div class="connect-card">
+        <!-- Inputs -->
+        <div class="connect-grid">
+          <div class="connect-field">
+            <label for="connect-name" class="connect-label">Name / Studio</label>
+            <input type="text" id="connect-name" class="connect-input font-mono" placeholder="Your name or studio..." autocomplete="name" />
+          </div>
+          <div class="connect-field">
+            <label for="connect-email" class="connect-label">Email / Contact</label>
+            <input type="email" id="connect-email" class="connect-input font-mono" placeholder="dev@studio.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="connect-field">
+          <label for="connect-msg" class="connect-label">Message</label>
+          <textarea id="connect-msg" class="connect-textarea font-mono" rows="4" placeholder="Tell me about your project, game mechanics, open role, or just say hello..."></textarea>
+        </div>
+
+        <!-- Actions -->
+        <div class="connect-actions">
+          <button type="button" id="connect-submit-btn" class="connect-btn-submit" title="Send message via mail client & copy to clipboard">
+            <span>Send Message →</span>
+          </button>
+          <span id="connect-toast" class="connect-toast">
+            <span>✓</span> Mail client opened &amp; copied to clipboard!
+          </span>
+        </div>
+
+        <!-- Subtle corner brackets matching portfolio aesthetic -->
+        <span class="plate-brk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </div>
+    </div>
+  </div>
+</section> </div> <script type="module" src="/assets/tech-stack.js"></script> <script type="module" src="/assets/connect-beacon.js"></script> <script type="module" src="/_astro/index.astro_astro_type_script_index_0_lang.CQDsW1y8.js?v=v4_fast_few"></script>   </main> <footer class="mt-28"> <div class="page-container px-6 lg:px-10 pb-10"> <div class="flex flex-wrap items-baseline justify-between gap-4 border-t border-border-strong pt-6"> <p class="font-mono text-sm text-fg">
 akypk<span class="text-accent-strong">_</span> </p> <p class="font-mono text-xs text-fg-muted"> 
 <a href="https://akypk.itch.io" target="_blank" rel="noopener noreferrer" class="inline-block p-2 -m-2 text-accent-strong hover:text-fg transition-colors">itch.io</a> 
 <span class="mx-2 text-fg-subtle">·</span> 

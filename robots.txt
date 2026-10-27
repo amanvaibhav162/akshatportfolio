@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin
 
-Sitemap: https://werlinger.dev/sitemap-index.xml
+Sitemap: https://akshatyadav.dev/sitemap-index.xml

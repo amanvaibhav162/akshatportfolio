@@ -1,0 +1,245 @@
+/* ==========================================================================
+   assets/tech-stack.css - Clean, High-Signal Tech Stack Section with Logos
+   Featuring React Bits SpotlightCard effect with authentic stack logos
+   ========================================================================== */
+
+.tech-stack-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 4.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 640px) {
+  .tech-stack-section {
+    margin-top: 5.5rem;
+    margin-bottom: 6rem;
+  }
+}
+
+/* --- Section Top Header Bar (matches site convention) --- */
+.tech-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border-strong, #333945);
+  padding-top: 0.75rem;
+}
+
+/* --- 3-Column Compact Grid Layout --- */
+.tech-grid-compact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tech-grid-compact {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* --- Spotlight Card Component (React Bits SpotlightCard) --- */
+.spotlight-card {
+  position: relative;
+  background: var(--color-bg-subtle, #121418);
+  border: 1px solid var(--color-border-strong, #333945);
+  border-radius: 6px;
+  padding: 1.35rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+/* Radial Glow following cursor inside card */
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    color-mix(in oklch, var(--color-accent-strong) 15%, transparent) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Reactive spotlight border shine (React Bits border glow) */
+.spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    var(--color-accent-strong),
+    transparent 65%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+}
+
+.spotlight-card:hover {
+  border-color: color-mix(in oklch, var(--color-accent-strong) 40%, var(--color-border-strong));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -8px color-mix(in oklch, var(--color-accent-strong) 14%, transparent);
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card:hover::after {
+  opacity: 0.9;
+}
+
+.spotlight-card:hover .plate-brk i {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px var(--color-accent-strong));
+}
+
+/* Card Header */
+.tech-card-head {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border, #22262e);
+}
+
+.tech-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.tech-card-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.tech-card-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-fg, #f4f5f7);
+}
+
+.tech-card-count {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  color: var(--color-fg-subtle, #68707d);
+}
+
+/* Item List */
+.tech-item-list {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tech-card-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.4rem 0.5rem;
+  margin: -0.4rem -0.5rem;
+  border-radius: 5px;
+  transition: background 0.15s ease;
+}
+
+.tech-card-item:hover {
+  background: color-mix(in oklch, var(--color-accent-strong) 7%, transparent);
+}
+
+.tech-item-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.tech-item-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.tech-logo-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  background: var(--color-bg, #090a0c);
+  border: 1px solid var(--color-border-strong, #333945);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-fg-muted, #9da3af);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card-item:hover .tech-logo-box {
+  color: var(--color-accent-strong, #f59e0b);
+  border-color: var(--color-accent-strong, #f59e0b);
+  background: color-mix(in oklch, var(--color-accent) 12%, var(--color-bg));
+  box-shadow: 0 0 10px -2px color-mix(in oklch, var(--color-accent-strong) 40%, transparent);
+  transform: scale(1.06);
+}
+
+.tech-logo-box svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.tech-item-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-fg, #f4f5f7);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.tech-item-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-strong, #f59e0b);
+  background: color-mix(in oklch, var(--color-accent-strong) 12%, transparent);
+  border: 1px solid color-mix(in oklch, var(--color-accent-strong) 35%, transparent);
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.tech-item-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--color-fg-muted, #9da3af);
+  padding-left: 2.4rem;
+}
