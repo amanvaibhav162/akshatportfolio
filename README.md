@@ -5,13 +5,12 @@ A faithful, high-performance static clone and architectural setup of [werlinger.
 ## 📁 What's Included
 
 - **Complete Site Structure & Assets**:
-  - `index.html`: Main landing page with the interactive particle/swarm canvas, typewriter cursor, project showcase grid, writing index, and footer.
-  - `projects/`: Detailed subpages for all showcase projects (`lific`, `omnith`, `imagineapp`, `rebang`, `autogpt`, `colonycopilot`, `banana-farmer-tower`).
-  - `writing/`: Full blog/article pages and writing index.
-  - `ai/`: Autonomous AI policy page (`/ai`).
-  - `_astro/`: Original compiled CSS stylesheets, JavaScript interactive runtime (swarm simulation canvas), and IBM Plex Mono / Archivo web fonts.
+  - `index.html`: Main landing page with interactive particle/swarm canvas, typewriter cursor, Tech Stack spotlight cards, project showcase grid, and terminal connect card.
+  - `projects/`: Detailed subpages for showcase projects (`golf-but-blackhole`, `xp-fender`, `oborust`, `cubescape`, `omnith`, `colonycopilot`, `banana-farmer-tower`, `ggj-2026`, `sih-2025`, `stem-game-jam`, `drishya`).
+  - `ai/`: Autonomous AI policy and engineering philosophy page (`/ai`).
+  - `_astro/`: Compiled CSS stylesheets, JavaScript interactive runtime (swarm simulation canvas), and IBM Plex Mono / Archivo web fonts.
   - `swarm/`: Spritesheets and JSON animation mappings for the little workers (`crew`), the desk programmer (`programmer-rework`), and scene items (`props`).
-  - `assets/` & `media/`: Project images, WebP assets, and demo media.
+  - `assets/` & `media/`: Project images, authentic SVG stack logos, and demo media.
 
 ## 🚀 How to Run Locally
 

@@ -7,8 +7,7 @@
     "start": "node serve.js",
     "dev": "node serve.js",
     "serve": "node serve.js",
-    "serve:py": "python3 serve.py",
-    "personalize": "python3 personalize.py"
+    "serve:py": "python3 serve.py"
   },
   "keywords": [
     "portfolio",
